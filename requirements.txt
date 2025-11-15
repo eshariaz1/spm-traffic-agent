@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+langgraph
+langchain-core
+typing_extensions
