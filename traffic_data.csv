@@ -1,0 +1,201 @@
+scenario,intersections,layman_description,volume,queue_length,avg_speed
+rush_hour,"C,D,A,B","Simulate heavy traffic during morning rush hour at C, D, A, B.",66,41,40
+accident,"D,A","A sudden accident is affecting traffic at D, A.",81,52,12
+rush_hour,"C,B,A,D","Simulate heavy traffic during morning rush hour at C, B, A, D.",65,52,38
+rain,"C,B","Rain is slowing down vehicles at C, B.",44,29,23
+rain,"D,B,C,A","Rain is slowing down vehicles at D, B, C, A.",100,19,16
+event_day,"D,A","A big event is causing traffic at D, A.",125,49,22
+event_day,"B,A,C","A big event is causing traffic at B, A, C.",74,41,15
+accident,"A,B","A sudden accident is affecting traffic at A, B.",56,54,28
+rush_hour,"C,A,D,B","Simulate heavy traffic during morning rush hour at C, A, D, B.",99,29,21
+rush_hour,"B,C","Simulate heavy traffic during morning rush hour at B, C.",63,32,34
+rain,"B,D,C,A","Rain is slowing down vehicles at B, D, C, A.",78,47,8
+event_day,"D,A,B","A big event is causing traffic at D, A, B.",102,25,19
+accident,"C,D,B,A","A sudden accident is affecting traffic at C, D, B, A.",83,58,6
+rain,"B,C","Rain is slowing down vehicles at B, C.",82,39,7
+off_peak,"A,B,D","Low traffic flow at A, B, D.",90,11,38
+accident,"C,A,D,B","A sudden accident is affecting traffic at C, A, D, B.",42,31,27
+accident,"C,B,D","A sudden accident is affecting traffic at C, B, D.",86,42,16
+rain,"D,C","Rain is slowing down vehicles at D, C.",85,13,17
+rush_hour,"A,B,C","Simulate heavy traffic during morning rush hour at A, B, C.",98,37,27
+accident,"A,C","A sudden accident is affecting traffic at A, C.",68,31,10
+event_day,"A,C","A big event is causing traffic at A, C.",114,30,30
+rush_hour,"C,A,B","Simulate heavy traffic during morning rush hour at C, A, B.",71,55,25
+event_day,"D,A,C,B","A big event is causing traffic at D, A, C, B.",83,34,15
+off_peak,"B,C,A,D","Low traffic flow at B, C, A, D.",92,22,26
+rush_hour,"D,B,A,C","Simulate heavy traffic during morning rush hour at D, B, A, C.",104,37,34
+off_peak,"A,C","Low traffic flow at A, C.",52,49,39
+event_day,"D,C,A","A big event is causing traffic at D, C, A.",74,41,18
+off_peak,"A,D,C","Low traffic flow at A, D, C.",80,24,30
+accident,"C,D","A sudden accident is affecting traffic at C, D.",59,65,21
+rush_hour,"C,B,D","Simulate heavy traffic during morning rush hour at C, B, D.",100,45,20
+accident,"C,D","A sudden accident is affecting traffic at C, D.",40,65,26
+off_peak,"D,B,C","Low traffic flow at D, B, C.",98,10,17
+event_day,"B,C,A","A big event is causing traffic at B, C, A.",107,63,31
+off_peak,"B,D,C,A","Low traffic flow at B, D, C, A.",65,10,36
+rush_hour,"D,A,C,B","Simulate heavy traffic during morning rush hour at D, A, C, B.",117,46,30
+event_day,"A,D,B,C","A big event is causing traffic at A, D, B, C.",94,35,26
+rain,"C,D,B","Rain is slowing down vehicles at C, D, B.",40,48,12
+event_day,"D,B","A big event is causing traffic at D, B.",125,34,25
+rush_hour,"B,A","Simulate heavy traffic during morning rush hour at B, A.",89,28,17
+event_day,"B,A,D","A big event is causing traffic at B, A, D.",88,40,18
+rain,"D,C","Rain is slowing down vehicles at D, C.",85,40,7
+rain,"B,A","Rain is slowing down vehicles at B, A.",59,23,18
+rain,"D,C,B","Rain is slowing down vehicles at D, C, B.",68,47,22
+off_peak,"C,D,B","Low traffic flow at C, D, B.",44,15,30
+accident,"B,A,C,D","A sudden accident is affecting traffic at B, A, C, D.",74,64,7
+rush_hour,"A,D","Simulate heavy traffic during morning rush hour at A, D.",72,27,31
+event_day,"D,B","A big event is causing traffic at D, B.",77,43,28
+rush_hour,"D,B,C","Simulate heavy traffic during morning rush hour at D, B, C.",102,40,25
+off_peak,"D,B,A,C","Low traffic flow at D, B, A, C.",69,33,17
+off_peak,"A,B","Low traffic flow at A, B.",97,28,31
+accident,"B,A,D","A sudden accident is affecting traffic at B, A, D.",43,68,27
+accident,"B,D","A sudden accident is affecting traffic at B, D.",73,61,20
+accident,"A,D,C,B","A sudden accident is affecting traffic at A, D, C, B.",53,70,23
+rain,"D,B,A,C","Rain is slowing down vehicles at D, B, A, C.",94,18,26
+accident,"C,B,A,D","A sudden accident is affecting traffic at C, B, A, D.",50,66,5
+off_peak,"B,C","Low traffic flow at B, C.",88,16,21
+off_peak,"B,A,C","Low traffic flow at B, A, C.",78,33,18
+off_peak,"A,C,D","Low traffic flow at A, C, D.",88,13,23
+rush_hour,"B,D","Simulate heavy traffic during morning rush hour at B, D.",61,60,35
+off_peak,"B,A,D","Low traffic flow at B, A, D.",91,28,40
+rain,"D,A","Rain is slowing down vehicles at D, A.",46,30,16
+rush_hour,"A,B,D","Simulate heavy traffic during morning rush hour at A, B, D.",107,52,39
+accident,"D,C","A sudden accident is affecting traffic at D, C.",65,55,20
+rush_hour,"A,D,B","Simulate heavy traffic during morning rush hour at A, D, B.",69,29,31
+event_day,"C,D,A,B","A big event is causing traffic at C, D, A, B.",82,53,16
+rush_hour,"D,A,C","Simulate heavy traffic during morning rush hour at D, A, C.",105,36,37
+accident,"B,C,D,A","A sudden accident is affecting traffic at B, C, D, A.",69,42,18
+event_day,"C,D,B","A big event is causing traffic at C, D, B.",112,38,28
+event_day,"B,A,C,D","A big event is causing traffic at B, A, C, D.",86,56,21
+off_peak,"A,B,D","Low traffic flow at A, B, D.",64,41,39
+off_peak,"A,D","Low traffic flow at A, D.",64,50,18
+accident,"C,A,B","A sudden accident is affecting traffic at C, A, B.",76,43,14
+accident,"B,C,D,A","A sudden accident is affecting traffic at B, C, D, A.",44,58,18
+off_peak,"A,C,B,D","Low traffic flow at A, C, B, D.",91,37,29
+off_peak,"A,D,C","Low traffic flow at A, D, C.",62,43,35
+off_peak,"C,A,B","Low traffic flow at C, A, B.",71,30,15
+off_peak,"B,D","Low traffic flow at B, D.",62,33,33
+accident,"A,B,D","A sudden accident is affecting traffic at A, B, D.",55,47,22
+off_peak,"D,B","Low traffic flow at D, B.",50,43,39
+rain,"D,A","Rain is slowing down vehicles at D, A.",82,35,30
+event_day,"D,C,B,A","A big event is causing traffic at D, C, B, A.",75,57,34
+rush_hour,"D,A,B,C","Simulate heavy traffic during morning rush hour at D, A, B, C.",76,36,21
+rush_hour,"A,D,B","Simulate heavy traffic during morning rush hour at A, D, B.",71,50,26
+rush_hour,"D,A,C,B","Simulate heavy traffic during morning rush hour at D, A, C, B.",78,52,28
+event_day,"D,A,C,B","A big event is causing traffic at D, A, C, B.",107,30,22
+rain,"A,D,C,B","Rain is slowing down vehicles at A, D, C, B.",70,30,18
+event_day,"C,A,B","A big event is causing traffic at C, A, B.",93,51,29
+rain,"A,B","Rain is slowing down vehicles at A, B.",61,27,27
+off_peak,"C,B","Low traffic flow at C, B.",88,13,36
+rush_hour,"C,B,A,D","Simulate heavy traffic during morning rush hour at C, B, A, D.",73,45,35
+rain,"B,D,C,A","Rain is slowing down vehicles at B, D, C, A.",80,16,17
+rush_hour,"B,D","Simulate heavy traffic during morning rush hour at B, D.",74,30,37
+accident,"A,B,C","A sudden accident is affecting traffic at A, B, C.",89,51,13
+off_peak,"C,B,D","Low traffic flow at C, B, D.",40,10,31
+off_peak,"C,A,D","Low traffic flow at C, A, D.",58,34,15
+event_day,"B,C","A big event is causing traffic at B, C.",92,34,31
+accident,"B,C","A sudden accident is affecting traffic at B, C.",60,31,23
+off_peak,"B,C,A","Low traffic flow at B, C, A.",67,47,18
+event_day,"B,C,A","A big event is causing traffic at B, C, A.",88,30,15
+rain,"C,A,D,B","Rain is slowing down vehicles at C, A, D, B.",48,43,7
+event_day,"A,D,C,B","A big event is causing traffic at A, D, C, B.",104,63,21
+rush_hour,"A,B,D","Simulate heavy traffic during morning rush hour at A, B, D.",60,20,39
+accident,"B,A,C","A sudden accident is affecting traffic at B, A, C.",41,34,18
+rush_hour,"C,A,B,D","Simulate heavy traffic during morning rush hour at C, A, B, D.",117,25,28
+event_day,"C,B","A big event is causing traffic at C, B.",115,30,36
+off_peak,"A,C,D","Low traffic flow at A, C, D.",67,31,28
+accident,"A,D,C,B","A sudden accident is affecting traffic at A, D, C, B.",98,58,16
+accident,"B,A","A sudden accident is affecting traffic at B, A.",91,69,12
+off_peak,"B,A,C,D","Low traffic flow at B, A, C, D.",73,31,15
+off_peak,"D,C","Low traffic flow at D, C.",57,33,40
+event_day,"A,C,D,B","A big event is causing traffic at A, C, D, B.",127,38,34
+rush_hour,"A,D,C","Simulate heavy traffic during morning rush hour at A, D, C.",82,27,17
+rush_hour,"A,B","Simulate heavy traffic during morning rush hour at A, B.",81,28,38
+accident,"C,B","A sudden accident is affecting traffic at C, B.",86,32,11
+rain,"D,A","Rain is slowing down vehicles at D, A.",65,29,32
+accident,"A,C,D","A sudden accident is affecting traffic at A, C, D.",81,33,27
+accident,"A,B,C,D","A sudden accident is affecting traffic at A, B, C, D.",70,53,6
+event_day,"B,A,C","A big event is causing traffic at B, A, C.",88,50,36
+accident,"B,A","A sudden accident is affecting traffic at B, A.",46,40,18
+accident,"A,B,C","A sudden accident is affecting traffic at A, B, C.",96,62,8
+rain,"C,A","Rain is slowing down vehicles at C, A.",59,27,10
+event_day,"A,D","A big event is causing traffic at A, D.",106,57,37
+off_peak,"D,A,B,C","Low traffic flow at D, A, B, C.",53,28,20
+off_peak,"C,B,A","Low traffic flow at C, B, A.",43,19,29
+rush_hour,"B,D","Simulate heavy traffic during morning rush hour at B, D.",81,59,36
+event_day,"A,D,C,B","A big event is causing traffic at A, D, C, B.",98,30,23
+event_day,"D,B","A big event is causing traffic at D, B.",85,59,34
+event_day,"C,A,B","A big event is causing traffic at C, A, B.",119,28,31
+event_day,"D,B,C","A big event is causing traffic at D, B, C.",119,61,29
+event_day,"C,B","A big event is causing traffic at C, B.",95,27,20
+accident,"D,A,B,C","A sudden accident is affecting traffic at D, A, B, C.",44,57,25
+event_day,"B,D,C,A","A big event is causing traffic at B, D, C, A.",125,60,37
+off_peak,"B,D","Low traffic flow at B, D.",82,46,33
+off_peak,"D,A,C,B","Low traffic flow at D, A, C, B.",98,42,15
+accident,"B,A,C","A sudden accident is affecting traffic at B, A, C.",40,39,13
+accident,"C,D,A","A sudden accident is affecting traffic at C, D, A.",87,54,27
+rain,"A,C,D","Rain is slowing down vehicles at A, C, D.",86,49,31
+rush_hour,"A,C,D,B","Simulate heavy traffic during morning rush hour at A, C, D, B.",114,39,40
+event_day,"C,B,A","A big event is causing traffic at C, B, A.",96,31,20
+accident,"A,D,C,B","A sudden accident is affecting traffic at A, D, C, B.",46,54,30
+rush_hour,"A,C,D,B","Simulate heavy traffic during morning rush hour at A, C, D, B.",85,41,16
+off_peak,"A,C,D,B","Low traffic flow at A, C, D, B.",70,17,21
+rain,"A,D","Rain is slowing down vehicles at A, D.",88,20,8
+accident,"C,D","A sudden accident is affecting traffic at C, D.",90,40,13
+rain,"A,B","Rain is slowing down vehicles at A, B.",52,46,32
+rush_hour,"C,D,B","Simulate heavy traffic during morning rush hour at C, D, B.",81,50,23
+accident,"B,C,A,D","A sudden accident is affecting traffic at B, C, A, D.",73,43,13
+rain,"C,D,A","Rain is slowing down vehicles at C, D, A.",84,20,16
+off_peak,"A,B","Low traffic flow at A, B.",89,29,22
+rush_hour,"A,C,B","Simulate heavy traffic during morning rush hour at A, C, B.",90,46,29
+event_day,"B,D","A big event is causing traffic at B, D.",71,29,20
+rush_hour,"A,D,C,B","Simulate heavy traffic during morning rush hour at A, D, C, B.",80,32,20
+rain,"C,B,D","Rain is slowing down vehicles at C, B, D.",86,18,28
+rain,"D,A","Rain is slowing down vehicles at D, A.",51,23,25
+accident,"B,D,C","A sudden accident is affecting traffic at B, D, C.",52,55,8
+rain,"A,D,C,B","Rain is slowing down vehicles at A, D, C, B.",59,27,24
+accident,"A,C,D,B","A sudden accident is affecting traffic at A, C, D, B.",46,37,20
+off_peak,"B,D","Low traffic flow at B, D.",56,13,36
+accident,"B,D,C","A sudden accident is affecting traffic at B, D, C.",99,59,7
+rain,"C,D,B,A","Rain is slowing down vehicles at C, D, B, A.",88,14,29
+event_day,"A,B,C","A big event is causing traffic at A, B, C.",122,56,33
+rain,"B,A,D","Rain is slowing down vehicles at B, A, D.",87,29,23
+rain,"C,A","Rain is slowing down vehicles at C, A.",40,40,15
+rush_hour,"D,B,C,A","Simulate heavy traffic during morning rush hour at D, B, C, A.",119,23,21
+off_peak,"B,C,A","Low traffic flow at B, C, A.",54,45,19
+event_day,"A,B","A big event is causing traffic at A, B.",97,60,28
+rain,"A,D,B,C","Rain is slowing down vehicles at A, D, B, C.",55,41,27
+off_peak,"A,B,C","Low traffic flow at A, B, C.",57,11,32
+event_day,"D,A","A big event is causing traffic at D, A.",85,25,32
+off_peak,"C,B","Low traffic flow at C, B.",80,48,20
+rush_hour,"B,A,D,C","Simulate heavy traffic during morning rush hour at B, A, D, C.",71,37,19
+event_day,"C,A,D,B","A big event is causing traffic at C, A, D, B.",93,37,40
+off_peak,"C,A","Low traffic flow at C, A.",91,44,27
+rain,"A,D,B,C","Rain is slowing down vehicles at A, D, B, C.",57,40,23
+off_peak,"D,A,B,C","Low traffic flow at D, A, B, C.",65,24,28
+rush_hour,"B,A,D","Simulate heavy traffic during morning rush hour at B, A, D.",106,22,24
+event_day,"B,C,A","A big event is causing traffic at B, C, A.",75,58,23
+rain,"A,C,B","Rain is slowing down vehicles at A, C, B.",60,14,17
+event_day,"A,B,D,C","A big event is causing traffic at A, B, D, C.",120,28,20
+rain,"A,C","Rain is slowing down vehicles at A, C.",46,25,16
+rain,"D,B,C","Rain is slowing down vehicles at D, B, C.",72,10,29
+event_day,"D,C,A,B","A big event is causing traffic at D, C, A, B.",82,62,34
+event_day,"A,D,C,B","A big event is causing traffic at A, D, C, B.",70,40,22
+rain,"D,B","Rain is slowing down vehicles at D, B.",97,15,31
+accident,"C,B,A,D","A sudden accident is affecting traffic at C, B, A, D.",53,66,21
+event_day,"C,D,A,B","A big event is causing traffic at C, D, A, B.",102,58,31
+off_peak,"C,A","Low traffic flow at C, A.",95,42,22
+accident,"C,B,A,D","A sudden accident is affecting traffic at C, B, A, D.",100,63,7
+rain,"B,A","Rain is slowing down vehicles at B, A.",94,40,11
+accident,"B,A,C,D","A sudden accident is affecting traffic at B, A, C, D.",81,40,14
+event_day,"A,C,D","A big event is causing traffic at A, C, D.",130,38,27
+off_peak,"B,A,D,C","Low traffic flow at B, A, D, C.",62,29,26
+accident,"A,B,C","A sudden accident is affecting traffic at A, B, C.",96,64,24
+off_peak,"C,A,D,B","Low traffic flow at C, A, D, B.",82,32,19
+accident,"D,A,B","A sudden accident is affecting traffic at D, A, B.",68,61,9
+accident,"C,D,A","A sudden accident is affecting traffic at C, D, A.",48,32,17
+rain,"C,B,A","Rain is slowing down vehicles at C, B, A.",50,19,26
+accident,"A,B","A sudden accident is affecting traffic at A, B.",91,51,9
+off_peak,"A,B,C,D","Low traffic flow at A, B, C, D.",48,33,35
+rain,"A,D,B,C","Rain is slowing down vehicles at A, D, B, C.",94,30,28

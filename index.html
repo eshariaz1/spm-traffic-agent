@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Traffic Flow Optimiser Agent UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background: #eef2f7;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 16px 40px;
+    }
+    h1 {
+      font-size: 28px;
+      color: #1f4f7b;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+    .section {
+      background: #ffffff;
+      margin-top: 18px;
+      padding: 18px 20px 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+      border: 1px solid #d8dee6;
+    }
+    .section h2 {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 4px;
+      color: #2f3b4c;
+    }
+    .section p {
+      font-size: 13px;
+      color: #7f8c8d;
+      margin-top: 2px;
+      margin-bottom: 12px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #2f3b4c;
+    }
+    input, select, textarea {
+      width: 100%;
+      margin-top: 5px;
+      padding: 8px 9px;
+      border-radius: 8px;
+      border: 1px solid #ccd3db;
+      background: #f8f9fb;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    textarea {
+      min-height: 60px;
+      resize: vertical;
+    }
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .row .col {
+      flex: 1;
+      min-width: 160px;
+    }
+    button {
+      margin-top: 14px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 9px 14px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #357ab8;
+    }
+    button.secondary {
+      background: #7f8c8d;
+    }
+    button.secondary:hover {
+      background: #5f6c73;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .output-section {
+      margin-top: 24px;
+    }
+    .output-section h2 {
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #2f3b4c;
+    }
+    #outputLabel {
+      font-size: 13px;
+      color: #7f8c8d;
+      margin-bottom: 4px;
+    }
+    pre {
+      background: #f4f7fb;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 13px;
+      border: 1px solid #d8dee6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .note {
+      font-size: 11px;
+      color: #9aa4af;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>🚦 Traffic Flow Optimiser Agent</h1>
+  <p class="subtitle">
+    Run traffic analysis using <b>Simulation</b> or <b>Dataset</b> mode, check health and status, and send feedback.
+  </p>
+
+  <!-- 1) Traffic Agent Request -->
+  <div class="section">
+    <h2>1. Run Traffic Agent</h2>
+    <p>Send a request to <code>/api/traffic-agent</code> using the same JSON structure as your backend.</p>
+
+    <div class="row">
+      <div class="col">
+        <label for="modeSelect">Mode</label>
+        <select id="modeSelect">
+          <option value="simulation">simulation</option>
+          <option value="dataset">dataset</option>
+        </select>
+        <div class="note">simulation = synthetic data, dataset = CSV-driven analysis</div>
+      </div>
+      <div class="col">
+        <label for="scenarioSelect">Scenario</label>
+        <select id="scenarioSelect">
+          <option value="rush_hour">rush_hour</option>
+          <option value="accident">accident</option>
+          <option value="rain">rain</option>
+          <option value="event_day">event_day</option>
+          <option value="off_peak">off_peak</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="intersectionsInput">Intersections (max 4)</label>
+        <input id="intersectionsInput" placeholder="A, B, C, D" />
+        <div class="note">Backend will reject more than 4.</div>
+      </div>
+    </div>
+
+    <label for="laymanInput">Layman description (optional)</label>
+    <input id="laymanInput" placeholder="Example: Simulate rush hour at A and D" />
+
+    <div class="btn-group">
+      <button onclick="sendTrafficRequest()">Run Traffic Agent</button>
+      <button class="secondary" onclick="fillExampleSimulation()">Example: Simulation</button>
+      <button class="secondary" onclick="fillExampleDataset()">Example: Dataset</button>
+    </div>
+  </div>
+
+  <!-- 2) Health and Status -->
+  <div class="section">
+    <h2>2. Health and Status</h2>
+    <p>Call <code>/health</code> and <code>/status</code> to show backend and agent state.</p>
+
+    <div class="btn-group">
+      <button onclick="getHealth()">GET /health</button>
+      <button onclick="getStatus()">GET /status</button>
+    </div>
+  </div>
+
+  <!-- 3) Latest Report -->
+  <div class="section">
+    <h2>3. Latest Report</h2>
+    <p>Fetch the latest full text report from <code>/report</code> (simulation mode only).</p>
+
+    <div class="btn-group">
+      <button onclick="getReport()">GET /report</button>
+    </div>
+  </div>
+
+  <!-- 4) Feedback -->
+  <div class="section">
+    <h2>4. Submit Feedback</h2>
+    <p>Send feedback to <code>POST /feedback</code> and view entries with <code>GET /feedback</code>.</p>
+
+    <div class="row">
+      <div class="col">
+        <label for="fbUser">User (optional)</label>
+        <input id="fbUser" placeholder="Student / Operator name" />
+      </div>
+      <div class="col">
+        <label for="fbScenario">Scenario (optional)</label>
+        <select id="fbScenario">
+          <option value="">(none)</option>
+          <option value="rush_hour">rush_hour</option>
+          <option value="accident">accident</option>
+          <option value="rain">rain</option>
+          <option value="event_day">event_day</option>
+          <option value="off_peak">off_peak</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="fbIntersections">Intersections (optional)</label>
+        <input id="fbIntersections" placeholder="A, B or A, B, C" />
+        <div class="note">Max 4, same rule as agent.</div>
+      </div>
+      <div class="col">
+        <label for="fbRating">Rating (1–5, optional)</label>
+        <input id="fbRating" type="number" min="1" max="5" placeholder="4" />
+      </div>
+    </div>
+
+    <label for="fbComment">Comment</label>
+    <textarea id="fbComment" placeholder="What did you like or what went wrong?"></textarea>
+
+    <div class="btn-group">
+      <button onclick="sendFeedback()">POST /feedback</button>
+    </div>
+
+    <div style="margin-top:12px;">
+      <label for="fbLimit">Feedback list limit</label>
+      <div class="row">
+        <div class="col" style="max-width:120px;">
+          <input id="fbLimit" type="number" min="1" max="100" value="10" />
+        </div>
+        <div class="col">
+          <button onclick="getFeedbackList()">GET /feedback</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Output -->
+  <div class="section output-section">
+    <h2>5. Response Viewer</h2>
+    <div id="outputLabel">No requests yet.</div>
+    <pre id="output">Waiting for response…</pre>
+  </div>
+</div>
+
+<script>
+  const BASE_URL = ""; 
+  // "" means same origin, so if you serve this via FastAPI at "/",
+  // it will call /api/traffic-agent, /health, etc on the same backend.
+  // If you open it directly from a file, set BASE_URL = "http://127.0.0.1:8000"
+
+  function setOutput(label, content, isPlainText=false) {
+    document.getElementById("outputLabel").textContent = label;
+    if (isPlainText) {
+      document.getElementById("output").textContent = content;
+    } else {
+      document.getElementById("output").textContent =
+        typeof content === "string"
+          ? content
+          : JSON.stringify(content, null, 2);
+    }
+  }
+
+  function parseIntersections(input) {
+    const parts = input
+      .split(",")
+      .map(x => x.trim())
+      .filter(x => x.length > 0);
+    if (parts.length > 4) {
+      alert("You entered more than 4 intersections. Only the first 4 will be sent.");
+      return parts.slice(0, 4);
+    }
+    return parts;
+  }
+
+  // 1) Traffic Agent
+  async function sendTrafficRequest() {
+    const mode = document.getElementById("modeSelect").value;
+    const scenario = document.getElementById("scenarioSelect").value;
+    const intersectionsRaw = document.getElementById("intersectionsInput").value || "A, B, C, D";
+    const layman = document.getElementById("laymanInput").value || "Frontend traffic request.";
+
+    const intersections = parseIntersections(intersectionsRaw);
+
+    const payload = {
+      messages: [
+        {
+          role: "assistant",
+          content: "Hello! I can help you analyse traffic."
+        },
+        {
+          role: "user",
+          content: {
+            layman_description: layman,
+            mode: mode,
+            scenario: scenario,
+            intersections: intersections
+          }
+        }
+      ],
+      mode: mode,
+      scenario: scenario,
+      intersections: intersections
+    };
+
+    try {
+      const res = await fetch(BASE_URL + "/api/traffic-agent", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      setOutput("Response from POST /api/traffic-agent", data);
+    } catch (err) {
+      setOutput("Error calling /api/traffic-agent", String(err), true);
+    }
+  }
+
+  function fillExampleSimulation() {
+    document.getElementById("modeSelect").value = "simulation";
+    document.getElementById("scenarioSelect").value = "rush_hour";
+    document.getElementById("intersectionsInput").value = "A, D";
+    document.getElementById("laymanInput").value =
+      "Simulate rush hour at intersections A and D.";
+  }
+
+  function fillExampleDataset() {
+    document.getElementById("modeSelect").value = "dataset";
+    document.getElementById("scenarioSelect").value = "accident";
+    document.getElementById("intersectionsInput").value = "A, R, X";
+    document.getElementById("laymanInput").value =
+      "Use dataset for accident at intersections A, R and X.";
+  }
+
+  // 2) Health and Status
+  async function getHealth() {
+    try {
+      const res = await fetch(BASE_URL + "/health");
+      const data = await res.json();
+      setOutput("Response from GET /health", data);
+    } catch (err) {
+      setOutput("Error calling /health", String(err), true);
+    }
+  }
+
+  async function getStatus() {
+    try {
+      const res = await fetch(BASE_URL + "/status");
+      const data = await res.json();
+      setOutput("Response from GET /status", data);
+    } catch (err) {
+      setOutput("Error calling /status", String(err), true);
+    }
+  }
+
+  // 3) Report
+  async function getReport() {
+    try {
+      const res = await fetch(BASE_URL + "/report");
+      const text = await res.text();
+      setOutput("Response from GET /report", text, true);
+    } catch (err) {
+      setOutput("Error calling /report", String(err), true);
+    }
+  }
+
+  // 4) Feedback
+  async function sendFeedback() {
+    const user = document.getElementById("fbUser").value.trim();
+    const scenario = document.getElementById("fbScenario").value;
+    const intersectionsRaw = document.getElementById("fbIntersections").value;
+    const ratingStr = document.getElementById("fbRating").value;
+    const comment = document.getElementById("fbComment").value.trim();
+
+    if (!comment) {
+      alert("Comment is required for feedback.");
+      return;
+    }
+
+    let intersections = null;
+    if (intersectionsRaw.trim().length > 0) {
+      intersections = parseIntersections(intersectionsRaw);
+    }
+
+    let rating = null;
+    if (ratingStr.trim().length > 0) {
+      rating = Number(ratingStr);
+    }
+
+    const payload = {
+      user: user || null,
+      scenario: scenario || null,
+      intersections: intersections,
+      rating: rating,
+      comment: comment
+    };
+
+    try {
+      const res = await fetch(BASE_URL + "/feedback", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      setOutput("Response from POST /feedback", data);
+    } catch (err) {
+      setOutput("Error calling POST /feedback", String(err), true);
+    }
+  }
+
+  async function getFeedbackList() {
+    const limitVal = document.getElementById("fbLimit").value || "10";
+    const limit = encodeURIComponent(limitVal);
+
+    try {
+      const res = await fetch(BASE_URL + "/feedback?limit=" + limit);
+      const data = await res.json();
+      setOutput("Response from GET /feedback", data);
+    } catch (err) {
+      setOutput("Error calling GET /feedback", String(err), true);
+    }
+  }
+</script>
+</body>
+</html>

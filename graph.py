@@ -475,10 +475,24 @@ def build_markdown_report(state: TrafficState) -> TrafficState:
 
 def build_api_response(state: TrafficState) -> TrafficState:
     """
-    This is the unified JSON you will return.
-    Report string is NOT included here.
+    Build the final JSON response.
+
+    - `raw_payload` keeps your OLD flat response (for backwards compatibility)
+    - `state["api_response"]` is the NEW wrapped format:
+
+      {
+        "agent_name": "...",
+        "status": "success",
+        "data": {
+            "message": "...",          # short explanation
+            "raw_response": { ... }    # full previous response
+        },
+        "error_message": null
+      }
     """
-    state["api_response"] = {
+
+    # This is your previous response structure (unchanged)
+    raw_payload = {
         "agent_name": "Traffic Flow Optimiser Agent",
         "scenario": state.get("scenario", "rush_hour"),
         "signal_plan": state.get("signal_plan", {}),
@@ -490,8 +504,19 @@ def build_api_response(state: TrafficState) -> TrafficState:
         "recommendations": state.get("recommendations", []),
         "explanation": state.get("explanation", ""),
         "status": "ok",
-        # NOTE: no report here on purpose
     }
+
+    # NEW wrapper format
+    state["api_response"] = {
+        "agent_name": "Traffic Flow Optimiser Agent",
+        "status": "success",                      # overall API call status
+        "data": {
+            "message": state.get("explanation", ""),  # short human text
+            "raw_response": raw_payload,              # full old response
+        },
+        "error_message": None,                    # or string if you add errors later
+    }
+
     return state
 
 
